@@ -61,7 +61,7 @@ func (account *Account) Login() map[string]interface{}{
 
 	_, password := account.GetUser()
 	err := bcrypt.CompareHashAndPassword([]byte(account.Password), []byte(password))
-	if err != nil && err == bcrypt.ErrMismatchedHashAndPassword { //Password does not match!
+	if err != nil && err == bcrypt.ErrMismatchedHashAndPassword {
 		return u.Message(false, "wrong password")
 	}
 
