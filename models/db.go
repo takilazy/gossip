@@ -53,7 +53,7 @@ func (account *Account) UpdateUser() {
 	db.Close()
 }
 
-func (account *Account) GetUser() {
+func (account *Account) GetUser() (string, string){
 	db, err := sql.Open("sqlite3", "./test.db")
 	checkErr(err)
 
@@ -73,6 +73,8 @@ func (account *Account) GetUser() {
 	}
 
 	db.Close()
+
+	return email, password
 }
 
 func checkErr(err error) {

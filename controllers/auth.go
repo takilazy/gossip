@@ -32,8 +32,8 @@ var Authenticate = func(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	//resp := models.Login(account.Email, account.Password)
-	//u.Respond(w, resp)
+	resp := account.Login()
+	u.Respond(w, resp)
 }
 
 var Get = func(w http.ResponseWriter, r *http.Request) {
